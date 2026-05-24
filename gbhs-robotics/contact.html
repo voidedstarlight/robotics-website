@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — GBHS Robotics</title>
+<meta name="description" content="Get in touch with Granite Bay High School Robotics — to join, mentor, sponsor, or host a demo." />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">GB</span><span class="brand-text">Granite Bay Robotics<small>FRC · Est. Granite Bay, CA</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li><li><a href="robots.html">Robots</a></li>
+      <li><a href="outreach.html">Outreach</a></li><li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul></nav>
+    <div class="nav-cta"><a href="sponsors.html" class="btn btn-outline">Sponsor Us</a>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container inner">
+    <span class="eyebrow">Contact</span>
+    <h1 class="mt-2">Get in touch.</h1>
+    <p class="lede">Whether you want to join the team, mentor, sponsor, or book a demo — drop us a line. We answer everything within a week.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Send a message</span>
+        <h2 class="mt-2">We'd love to hear from you.</h2>
+        <form class="form mt-3" onsubmit="event.preventDefault(); alert('Thanks — wire this form up to your email or form service.');">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div>
+            <label for="reason">I'm reaching out about</label>
+            <select id="reason" name="reason">
+              <option>Joining the team</option>
+              <option>Mentoring</option>
+              <option>Sponsoring</option>
+              <option>Hosting a demo</option>
+              <option>Press / Media</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message <span class="arrow">→</span></button>
+        </form>
+      </div>
+
+      <div>
+        <span class="eyebrow">Direct lines</span>
+        <h2 class="mt-2">Or reach out directly.</h2>
+        <ul style="list-style:none; margin-top:24px;">
+          <li style="padding:20px 0; border-top:1px solid var(--line);"><div class="num-mono" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.14em;">GENERAL</div><a href="mailto:robotics@gbhs.example" style="font-size:1.1rem;">robotics@gbhs.example</a></li>
+          <li style="padding:20px 0; border-top:1px solid var(--line);"><div class="num-mono" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.14em;">SPONSORSHIP</div><a href="mailto:sponsors@gbhs.example" style="font-size:1.1rem;">sponsors@gbhs.example</a></li>
+          <li style="padding:20px 0; border-top:1px solid var(--line);"><div class="num-mono" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.14em;">OUTREACH</div><a href="mailto:outreach@gbhs.example" style="font-size:1.1rem;">outreach@gbhs.example</a></li>
+          <li style="padding:20px 0; border-top:1px solid var(--line);"><div class="num-mono" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.14em;">VISIT</div><span>Granite Bay High School<br/>1 Grizzly Way<br/>Granite Bay, CA 95746</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-bone">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Find us</span><h2 class="mt-2">Where we build.</h2></div><p class="lede">Drop in an embedded map of the school, or a photo of the build space.</p></div>
+    <div class="infographic" data-placeholder style="min-height:320px;">
+      <span class="tag">Map · Build Space</span>
+      <h3>Granite Bay High School</h3>
+      <p>Embed Google Maps here, or replace with a photo of the build space.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="brand" style="color:#fff;"><span class="brand-mark">GB</span><span class="brand-text">Granite Bay Robotics<small style="color:rgba(255,255,255,.5);">FRC · Granite Bay, CA</small></span></a><p>A student-led FRC team at Granite Bay High School.</p></div>
+      <div><h5>Navigate</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="robots.html">Robots</a></li><li><a href="outreach.html">Outreach</a></li></ul></div>
+      <div><h5>Get involved</h5><ul><li><a href="sponsors.html">Sponsor</a></li><li><a href="contact.html">Mentor</a></li><li><a href="contact.html">Join</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>Granite Bay High School</li><li>Granite Bay, CA 95746</li><li><a href="mailto:robotics@gbhs.example">robotics@gbhs.example</a></li></ul></div>
+    </div>
+    <div class="footer-base"><span>© 2026 GBHS Robotics</span><span>Made by students</span></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
