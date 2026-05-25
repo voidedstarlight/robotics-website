@@ -1,6 +1,13 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+}
 
 body {
 	font-family: var(--font-body);
@@ -17,4 +24,10 @@ body {
 	gap: 80px;
 	align-items: start;
 }
-@media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 40px; } }
+
+@media (max-width: 900px) {
+	.split {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+}

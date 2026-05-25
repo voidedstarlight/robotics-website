@@ -15,3 +15,16 @@
 	--font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
 	--font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
+
+.bg-bone {
+	background: var(--bone);
+}
+
+.bg-black {
+	background: var(--black);
+	color: var(--white);
+}
+
+.bg-black h2, .bg-black h3, .bg-black h4 {
+	color: var(--white);
+}

@@ -1,4 +1,7 @@
-img, svg { max-width: 100%; display: block; }
+img, svg {
+	max-width: 100%;
+	display: block;
+}
 
 .infographic {
 	border: 1px solid var(--line);
@@ -7,26 +10,31 @@ img, svg { max-width: 100%; display: block; }
 	padding: 40px;
 	position: relative;
 	min-height: 260px;
+
+	&[data-placeholder]::after {
+		content: "caption here";
+		position: absolute; bottom: 12px; right: 16px;
+		font-family: var(--font-mono);
+		font-size: 0.65rem;
+		color: var(--muted);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.tag {
+		display: inline-block;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--green);
+		margin-bottom: 16px;
+	}
+
+	h3 {
+		margin-bottom: 12px;
+	}
 }
-.infographic[data-placeholder]::after {
-	content: "INFOGRAPHIC SLOT — replace with chart, diagram, or image";
-	position: absolute; bottom: 12px; right: 16px;
-	font-family: var(--font-mono);
-	font-size: 0.65rem;
-	color: var(--muted);
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-}
-.infographic .tag {
-	display: inline-block;
-	font-family: var(--font-mono);
-	font-size: 0.7rem;
-	letter-spacing: 0.16em;
-	text-transform: uppercase;
-	color: var(--green);
-	margin-bottom: 16px;
-}
-.infographic h3 { margin-bottom: 12px; }
 
 .stat-grid {
 	display: grid;
@@ -37,25 +45,32 @@ img, svg { max-width: 100%; display: block; }
 	border-radius: var(--radius);
 	overflow: hidden;
 }
+
 .stat {
 	background: var(--white);
 	padding: 32px 28px;
-}
-.stat .num {
-	font-family: var(--font-display);
-	font-size: clamp(2.2rem, 4vw, 3.4rem);
-	color: var(--green);
-	font-weight: 600;
-	letter-spacing: -0.03em;
-	line-height: 1;
-}
-.stat .label {
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--muted);
-	margin-top: 14px;
-}
-@media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
 
+	.num {
+		font-family: var(--font-display);
+		font-size: clamp(2.2rem, 4vw, 3.4rem);
+		color: var(--green);
+		font-weight: 600;
+		letter-spacing: -0.03em;
+		line-height: 1;
+	}
+
+	.label {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-top: 14px;
+	}
+}
+
+@media (max-width: 900px) {
+	.stat-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

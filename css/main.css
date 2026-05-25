@@ -10,24 +10,47 @@
 @import url("text.css");
 
 @media (max-width: 900px) {
-	.nav-links { display: none; }
-	.menu-toggle { display: block; }
-	.nav-links.open {
-		display: flex;
-		position: absolute;
-		top: 72px; left: 0; right: 0;
-		background: var(--white);
-		flex-direction: column;
-		padding: 24px var(--pad);
-		border-bottom: 1px solid var(--line);
-		align-items: flex-start;
-		gap: 18px;
+	.nav-links {
+		display: none;
+
+		&.open {
+			display: flex;
+			position: absolute;
+			top: 72px; left: 0; right: 0;
+			background: var(--white);
+			flex-direction: column;
+			padding: 24px var(--pad);
+			border-bottom: 1px solid var(--line);
+			align-items: flex-start;
+			gap: 18px;
+		}
 	}
-	.nav-cta .btn-outline { display: none; }
+
+	.menu-toggle {
+		display: block;
+	}
+
+	.nav-cta .btn-outline {
+		display: none;
+	}
 }
 
-.mt-0 { margin-top: 0; } .mt-1 { margin-top: 16px; } .mt-2 { margin-top: 32px; } .mt-3 { margin-top: 48px; }
-.center { text-align: center; }
-.bg-bone { background: var(--bone); }
-.bg-black { background: var(--black); color: var(--white); }
-.bg-black h2, .bg-black h3, .bg-black h4 { color: var(--white); }
+.mt-0 {
+	margin-top: 0;
+}
+
+.mt-1 {
+	margin-top: 16px;
+}
+
+.mt-2 {
+	margin-top: 32px;
+}
+
+.mt-3 {
+	margin-top: 48px;
+}
+
+.center {
+	text-align: center;
+}

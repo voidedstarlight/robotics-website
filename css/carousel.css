@@ -7,6 +7,7 @@
 	overflow: hidden;
 	white-space: nowrap;
 }
+
 .ticker-inner {
 	display: inline-flex;
 	gap: 56px;
@@ -15,10 +16,22 @@
 	font-size: 0.85rem;
 	letter-spacing: 0.18em;
 	text-transform: uppercase;
+	
+	 span {
+		 color: rgba(255,255,255,.7);
+	 
+		 &.dot {
+			color: var(--green-bright);
+		}
+	}
 }
-.ticker-inner span { color: rgba(255,255,255,.7); }
-.ticker-inner span.dot { color: var(--green-bright); }
+
 @keyframes scroll {
-	from { transform: translateX(0); }
-	to { transform: translateX(-50%); }
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
 }
