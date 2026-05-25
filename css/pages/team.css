@@ -1,0 +1,35 @@
+.team-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+.member {
+	background: var(--bone);
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+.member .photo {
+	aspect-ratio: 3/4;
+	background: linear-gradient(135deg, #1a1a1a, #0a5d2a);
+	position: relative;
+}
+.member .photo::after {
+	content: "PHOTO";
+	position: absolute; inset: 0;
+	display: grid; place-items: center;
+	color: rgba(255,255,255,.4);
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.18em;
+}
+.member .info { padding: 18px 20px; }
+.member h4 { font-family: var(--font-display); margin-bottom: 4px; }
+.member .role {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--green);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+@media (max-width: 1000px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
