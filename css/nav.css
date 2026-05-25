@@ -15,8 +15,8 @@
 }
 
 .brand {
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 40px auto;
 	gap: 12px;
 	font-family: var(--font-display);
 	font-weight: 700;
@@ -26,11 +26,22 @@
 .brand-logo {
 	width: 36px;
 	height: 36px;
+	display: block;
 	background-image: url("../assets/logo.webp");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 6px;
+}
+
+.logo-container {
+	contain: size;
+
+	img {
+		height: 100%;
+		object-fit: contain;
+		width: 100%;
+	}
 }
 
 .brand-text small {
@@ -40,7 +51,8 @@
 	font-size: 0.7rem;
 	color: var(--muted);
 	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	padding-bottom: 2px;
+	margin-top: -1px;
 }
 
 .nav-links {
