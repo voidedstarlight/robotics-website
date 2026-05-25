@@ -2,7 +2,7 @@
 	position: relative;
 	background: var(--black);
 	color: var(--white);
-	padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 120px);
+	padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 100px);
 	overflow: hidden;
 
 	&::before {
