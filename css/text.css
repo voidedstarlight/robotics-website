@@ -36,7 +36,6 @@ p {
 	font-family: var(--font-mono);
 	font-size: 0.78rem;
 	letter-spacing: 0.18em;
-	text-transform: uppercase;
 	color: var(--green);
 	display: inline-flex;
 	align-items: center;
