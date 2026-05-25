@@ -18,6 +18,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.container {
+	width: 100%;
+	max-width: var(--max);
+	margin: 0 auto;
+	padding-left: var(--pad);
+	padding-right: var(--pad);
+}
+
 .split {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

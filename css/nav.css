@@ -1,11 +1,3 @@
-.container {
-	width: 100%;
-	max-width: var(--max);
-	margin: 0 auto;
-	padding-left: var(--pad);
-	padding-right: var(--pad);
-}
-
 .nav {
 	position: sticky;
 	top: 0;

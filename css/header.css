@@ -2,15 +2,8 @@
 	position: relative;
 	background: var(--black);
 	color: var(--white);
-	padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 100px);
+	padding: clamp(80px, 12vw, 90px) 0 clamp(60px, 8vw, 100px);
 	overflow: hidden;
-
-	&::before {
-		content: "";
-		position: absolute; inset: 0;
-		background: radial-gradient(800px 400px at 80% 20%, rgba(20,160,74,.25), transparent 60%), linear-gradient(180deg, transparent 0%, rgba(0,0,0,.6) 100%);
-		pointer-events: none;
-	}
 
 	.grid-bg {
 		position: absolute; inset: 0;
