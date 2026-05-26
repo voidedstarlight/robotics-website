@@ -75,7 +75,7 @@
 		color: #444;
 	}
 
-		.meta {
+	.meta {
 		font-family: var(--font-mono);
 		font-size: 0.72rem;
 		color: var(--muted);

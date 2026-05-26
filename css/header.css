@@ -4,16 +4,10 @@
 	color: var(--white);
 	padding: clamp(80px, 12vw, 90px) 0 clamp(60px, 8vw, 100px);
 	overflow: hidden;
-
-	.grid-bg {
-		position: absolute; inset: 0;
-		background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-		background-size: 56px 56px;
-		mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-	}
 	
 	h1 {
 		color: var(--white);
+		margin-bottom: 32px;
 
 		em {
 			font-style: normal;
@@ -29,6 +23,16 @@
 			background: var(--green-bright);
 		}
 	}
+
+	.description {
+		display: grid;
+		gap: 24px;
+		grid-template-columns: auto auto;
+
+		img {
+			height: 330px; 
+		}
+	}
 }
 
 .hero-inner {
@@ -36,15 +40,13 @@
 }
 
 .hero-meta {
-	display: flex; flex-wrap: wrap; gap: 32px;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 32px;
 	margin-top: 40px;
 	padding-top: 32px;
 	border-top: 1px solid rgba(255,255,255,.15);
 	
-	div {
-		min-width: 140px;
-	}
-
 	dt {
 		font-family: var(--font-mono);
 		font-size: 0.7rem;
@@ -70,38 +72,6 @@
 
 .hero-lede {
 	color: rgba(255,255,255,.78);
-	margin-top: 24px;
 	max-width: 56ch;
 }
 
-.page-hero {
-	background: var(--black);
-	color: var(--white);
-	padding: clamp(100px, 14vw, 180px) 0 clamp(60px, 8vw, 100px);
-	position: relative;
-	overflow: hidden;
-
-	&::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-		background-size: 56px 56px;
-		mask-image: radial-gradient(ellipse at 30% 50%, black 30%, transparent 75%);
-	}
-
-	.inner {
-		position: relative;
-		z-index: 1;
-		max-width: 800px;
-	}
-
-	h1 {
-		color: var(--white);
-	}
-
-	.lede {
-		color: rgba(255,255,255,.78);
-		margin-top: 24px;
-	}
-}
