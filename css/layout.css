@@ -24,6 +24,10 @@ body {
 	margin: 0 auto;
 	padding-left: var(--pad);
 	padding-right: var(--pad);
+
+	& > h3 {
+		margin-bottom: 1em;
+	}
 }
 
 .split {

@@ -57,19 +57,14 @@
 	}
 }
 
-.pillar {
+.pillar-3, .pillar-4 {
 	border-top: 1px solid var(--line);
 	padding: 36px 0;
 	display: grid;
-	grid-template-columns: 80px 1fr 2fr 100px;
 	gap: 32px;
 	align-items: start;
 	transition: background .2s ease;
 
-	&:hover {
-		background: var(--bone);
-	}
-	
 	.idx {
 		font-family: var(--font-mono);
 		color: var(--green);
@@ -95,8 +90,16 @@
 	}
 }
 
+.pillar-4 {
+	grid-template-columns: 80px 1fr 2fr 100px;
+}
+
+.pillar-3 {
+	grid-template-columns: 1fr 1fr 2fr;
+}
+
 @media (max-width: 800px) {
-	.pillar {
+	.pillar-3, .pillar-4 {
 		grid-template-columns: 1fr;
 		gap: 12px;
 
