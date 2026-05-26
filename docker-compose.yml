@@ -1,0 +1,12 @@
+services:
+  webserver:
+    build: .
+
+    container_name: grizzlyrobotics.org
+    image: grizzlyrobotics.org:0.0.1
+
+    ports:
+      - "5100:5100"
+
+    pull_policy: build
+    restart: always

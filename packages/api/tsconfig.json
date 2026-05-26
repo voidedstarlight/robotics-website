@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"outDir": "../../dist",
+		"rootDir": "./src"
+	},
+	"extends": [
+		"@tsconfig/node24/tsconfig.json",
+		"../../tsconfig.json"
+	],
+	"include": [
+		"src/**/*.ts",
+		"types/**/*.d.ts"
+	]
+}
