@@ -26,12 +26,13 @@
 	}
 
 	.info {
-		padding: 17px 24px;
+		padding: 17px 23px;
 	}
 	
 	h4 {
 		font-family: var(--font-display);
 		margin-bottom: 4px;
+		margin-top: 3px;
 	}
 
 	.role {
