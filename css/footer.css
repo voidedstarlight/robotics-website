@@ -25,6 +25,10 @@
 		gap: 12px;
 		justify-content: flex-end;
 	}
+
+	.eyebrow::before {
+		background: var(--white);
+	}
 }
 
 @media (max-width: 800px) {
