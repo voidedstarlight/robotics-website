@@ -14,6 +14,13 @@
 	--font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
 	--font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
 	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+	/* for svg graphics */
+	--color1: var(--green-bright);
+	--color2: #117288;
+	--color3: var(--green-dark);
+	--color4: #9AA113;
+	--color5: #17C2BC;
 }
 
 .bg-bone {
