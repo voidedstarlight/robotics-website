@@ -3,10 +3,14 @@
 	gap: 64px;
 	align-items: center;
 	padding: 64px 0;
-	border-top: 1px solid var(--line);
+	border-top: 2px solid var(--line);
 
 	&:first-of-type {
 		border-top: 0;
+	}
+
+	:where(&:nth-child(even)) {
+		flex-direction: row-reverse;
 	}
 
 	.visual {
@@ -60,8 +64,18 @@
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
 	.season {
-		grid-template-columns: 1fr;
+		flex-direction: column;
+
+		& > :not(.visual) {
+			width: 90%;
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.season ul li {
+		flex-direction: column;
 	}
 }
