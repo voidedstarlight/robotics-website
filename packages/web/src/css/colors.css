@@ -1,0 +1,37 @@
+:root {
+	--green: #0a5d2a;
+	--green-bright: #14a04a;
+	--green-dark: #06401d;
+	--black: #0a0a0a;
+	--ink: #141414;
+	--white: #ffffff;
+	--bone: #f5f5f2;
+	--muted: #6b6b6b;
+	--line: #e5e5e3;
+	--radius: 6px;
+	--max: 1320px;
+	--pad: clamp(20px, 4vw, 56px);
+	--font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+	--font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+	/* for svg graphics */
+	--color1: var(--green-bright);
+	--color2: #117288;
+	--color3: var(--green-dark);
+	--color4: #9AA113;
+	--color5: #17C2BC;
+}
+
+.bg-bone {
+	background: var(--bone);
+}
+
+.bg-black {
+	background: var(--black);
+	color: var(--white);
+}
+
+.bg-black h2, .bg-black h3, .bg-black h4 {
+	color: var(--white);
+}

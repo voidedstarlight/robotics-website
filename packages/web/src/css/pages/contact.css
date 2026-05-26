@@ -1,0 +1,35 @@
+.form {
+	display: grid;
+	gap: 18px;
+	label {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	input, textarea, select {
+		width: 100%;
+		padding: 14px 16px;
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		font-family: var(--font-body);
+		font-size: 1rem;
+		background: var(--white);
+		color: var(--ink);
+		transition: border-color .2s ease;
+	}
+
+	input:focus, textarea:focus, select:focus {
+		outline: none;
+		border-color: var(--green);
+	}
+
+	textarea {
+		min-height: 160px;
+		resize: vertical;
+	}
+}
