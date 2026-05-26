@@ -35,6 +35,22 @@
 	}
 }
 
+@media (max-width: 1200px) {
+	.hero .description {
+		display: flex;
+		flex-direction: column;
+		width: calc(100svw - var(--pad) * 2);
+
+		p {
+			font-size: max(0.8rem, 2.1vw);
+		}
+
+		img {
+			height: unset;
+		}
+	}
+}
+
 .hero-inner {
 	position: relative; z-index: 1;
 }
