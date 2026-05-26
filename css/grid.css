@@ -35,11 +35,6 @@
 	background: var(--white);
 	transition: border-color .25s ease, transform .25s ease;
 
-	&:hover {
-		border-color: var(--green);
-		transform: translateY(-3px);
-	}
-
 	.num-mono {
 		font-family: var(--font-mono);
 		font-size: 0.72rem;

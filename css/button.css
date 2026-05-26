@@ -22,6 +22,10 @@
 	&:hover .arrow {
 		transform: translateX(4px);
 	}
+
+	& + .btn {
+		margin-left: 1.2em;
+	}
 }
 
 .btn-primary {

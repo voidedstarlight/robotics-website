@@ -1,5 +1,6 @@
 img, svg {
 	border-radius: var(--radius);
+	margin: auto;
 	max-width: 100%;
 	display: block;
 }
