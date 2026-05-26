@@ -33,7 +33,7 @@ body {
 .split {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 80px;
+	gap: 100px;
 	align-items: start;
 }
 
@@ -41,5 +41,35 @@ body {
 	.split {
 		grid-template-columns: 1fr;
 		gap: 40px;
+	}
+}
+
+section {
+	padding: clamp(64px, 9vw, 120px) 0;
+}
+
+.section-head {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 48px;
+	margin-bottom: 64px;
+
+	h2 {
+		max-width: 14ch;
+	}
+
+	p {
+		max-width: 50ch;
+	}
+
+	.infographic {
+		margin-top: 2.5em;
+	}
+}
+
+@media (max-width: 800px) {
+	.section-head {
+		grid-template-columns: 1fr;
+		gap: 20px;
 	}
 }

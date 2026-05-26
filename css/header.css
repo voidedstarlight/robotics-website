@@ -74,30 +74,6 @@
 	max-width: 56ch;
 }
 
-section {
-	padding: clamp(64px, 9vw, 120px) 0;
-}
-
-.section-head {
-	display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
-	margin-bottom: 64px; align-items: end;
-
-	h2 {
-		max-width: 14ch;
-	}
-
-	p {
-		max-width: 50ch;
-	}
-}
-
-@media (max-width: 800px) {
-	.section-head {
-		grid-template-columns: 1fr;
-		gap: 20px;
-	}
-}
-
 .page-hero {
 	background: var(--black);
 	color: var(--white);

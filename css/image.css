@@ -1,4 +1,5 @@
 img, svg {
+	border-radius: var(--radius);
 	max-width: 100%;
 	display: block;
 }
@@ -10,16 +11,6 @@ img, svg {
 	padding: 40px;
 	position: relative;
 	min-height: 260px;
-
-	&[data-placeholder]::after {
-		content: "caption here";
-		position: absolute; bottom: 12px; right: 16px;
-		font-family: var(--font-mono);
-		font-size: 0.65rem;
-		color: var(--muted);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
 
 	.tag {
 		display: inline-block;
@@ -33,6 +24,10 @@ img, svg {
 
 	h3 {
 		margin-bottom: 12px;
+	}
+
+	&:has(> img) {
+		padding: 0;
 	}
 }
 
