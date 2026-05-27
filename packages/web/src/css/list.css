@@ -16,3 +16,13 @@
 		}
 	}
 }
+
+@media (max-width: 476px) {
+	.spaced-list > li {
+		flex-direction: column;
+
+		& > :not(:first-child) {
+			align-self: end;
+		}
+	}
+}
