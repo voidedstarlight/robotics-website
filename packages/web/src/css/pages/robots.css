@@ -20,10 +20,14 @@
 		border-radius: var(--radius);
 		color: var(--muted);
 		font-family: var(--font-mono);
-		height: 27em;
-		min-width: 21em;
+		max-height: 27em;
+		min-width: min(90%, 21em);
 		object-fit: contain;
 		text-align: center;
+
+		&:not([src]) {
+			height: 27em;
+		}
 	}
 	
 	& > :not(.visual) {
