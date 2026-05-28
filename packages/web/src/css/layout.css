@@ -42,10 +42,15 @@ body {
 		grid-template-columns: 1fr;
 		gap: 40px;
 	}
+
+	section {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
-section {
-	padding: clamp(64px, 9vw, 120px) 0;
+:where(section) {
+	padding: clamp(28px, 6vw, 100px) 30px;
 }
 
 .section-head {
