@@ -13,7 +13,7 @@ export default {
 	plugins: [
 		new rspack.CopyRspackPlugin({
 			patterns: [
-				{ 
+				{
 					from: "src"
 				},
 			],
