@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   workflow_dispatch:
-#  push:
-#    branches: [ main ]
+  push:
+    branches: [ vercel ]
 
 jobs:
   deploy:
@@ -26,10 +26,11 @@ jobs:
       - name: Install dependencies and build
         run: npm ci && npm run build
 
-      - name: Trigger deployment
-        uses: amondnet/vercel-action@v42.3.0
-        id: vercel
-        with:
-          vercel-version: 50.44.0
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull Vercel Environment
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Vercel Project
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
