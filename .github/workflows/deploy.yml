@@ -59,4 +59,4 @@ jobs:
           env: production
       
       - name: Promote Build
-        run: vercel promote ${{ steps.vercel_deployment.outputs.ENV_URL }} --token=${{ secrets.VERCEL_TOKEN  }} --scope=${{ secrets.VERCEL_ORG_ID }} --yes
+        run: npx vercel promote ${{ steps.vercel_deployment.outputs.ENV_URL }} --token=${{ secrets.VERCEL_TOKEN  }} --scope=${{ secrets.VERCEL_ORG_ID }} --yes
