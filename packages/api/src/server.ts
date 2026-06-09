@@ -1,5 +1,6 @@
 import {
 	fastify, type FastifyInstance,
+	type FastifyReply, type FastifyRequest
 } from "fastify";
 
 import fastifyStatic from "@fastify/static";
@@ -14,10 +15,7 @@ function defineRoutes(server: FastifyInstance) {
 function webserver() {
 	const server = fastify({
 		logger: {
-			level: "warn",
-			transport: {
-				target: "pino-pretty"
-			}
+			level: "warn"
 		}
 	});
 
@@ -27,7 +25,20 @@ function webserver() {
 	});
 
 	defineRoutes(server);
+	
+	return server;
+}
 
+const server = webserver();
+
+async function serverlessHandler(request: FastifyRequest, reply: FastifyReply) {
+	await server.ready();
+	server.server.emit("request", request, reply);
+}
+
+export default serverlessHandler;
+
+if (process.env.NODE_ENV !== "production") {
 	server.listen({
 		host: "0.0.0.0",
 		port: 5100
@@ -41,5 +52,3 @@ function webserver() {
 		}
 	});
 }
-
-webserver();
