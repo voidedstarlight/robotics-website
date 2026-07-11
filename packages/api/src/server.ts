@@ -25,7 +25,7 @@ function webserver() {
 	});
 
 	defineRoutes(server);
-	
+
 	return server;
 }
 
