@@ -44,11 +44,11 @@ if (process.env.NODE_ENV !== "production") {
 		port: 5100
 	}, err => {
 		if (err) {
-			server.log.warn("[server] failed to start fastify");
-			server.log.warn(err);
+			console.warn("[server] failed to start fastify");
+			console.warn(err);
 			process.exit(1);
 		} else {
-			server.log.info("[server] http://0.0.0.0:5100");
+			console.log("[server] http://0.0.0.0:5100");
 		}
 	});
 }
