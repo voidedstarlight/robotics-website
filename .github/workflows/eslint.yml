@@ -8,11 +8,11 @@ jobs:
     outputs:
       packages: ${{ steps.changes.outputs.packages }}
     permissions:
-      contents: read                                                                         
+      contents: read
       pull-requests: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: dorny/paths-filter@v4
         id: changes
         with:
@@ -35,3 +35,11 @@ jobs:
         run: npm ci --include=dev
       - name: Run ESLint
         run: npm run lint
+
+  required-checks-passed:
+    if: always()
+    needs: run-eslint
+    runs-on: ubuntu-latest
+    steps:
+      - if: contains(needs.*.result, 'failure')
+        run: exit 1
