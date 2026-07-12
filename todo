@@ -1,4 +1,5 @@
 update deps
+fix robots.txt
 use two-col layout in teams section of index
 use absolute paths in hrefs
 fix stacked <link> in html heads
