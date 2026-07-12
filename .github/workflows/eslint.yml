@@ -3,8 +3,26 @@ name: Run ESLint
 on: [push, pull_request]
 
 jobs:
+  check-changes:
+    name: Check Changes
+    outputs:
+      packages: ${{ steps.changes.outputs.packages }}
+    permissions:
+      contents: read
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v4
+        id: changes
+        with:
+          filters: |
+            packages:
+              - 'packages/**'
   run-eslint:
+    if: needs.check-changes.outputs.packages == 'true'
     name: Run ESLint
+    needs: check-changes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,3 +35,13 @@ jobs:
         run: npm ci --include=dev
       - name: Run ESLint
         run: npm run lint
+
+  required-checks-passed:
+    if: always()
+    name: ESLint Passed or Skipped
+    needs: run-eslint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for failures
+        if: contains(needs.*.result, 'failure')
+        run: exit 1
