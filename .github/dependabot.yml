@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      actions-deps:
+        patterns:
+          - "*"
+    target-branch: "deploy"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directories:
+      - "/"
+      - "/packages/api"
+      - "/packages/web"
+    groups:
+      prod-deps:
+        dependency-type: "production"
+      dev-deps:
+        dependency-type: "development"
+    target-branch: "deploy"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: increase
