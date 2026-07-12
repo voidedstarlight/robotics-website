@@ -1,6 +1,12 @@
 name: Run ESLint
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "packages/**"
+  pull_request:
+    paths:
+      - "packages/**"
 
 jobs:
   run-eslint:
