@@ -16,6 +16,10 @@ const api_key = new Promise<string | undefined>(resolve => {
 	}
 });
 
+if (!await api_key) {
+	console.warn("[email] no API key found in environment");
+}
+
 function attachEmailHandler(server: FastifyInstance) {
 	server.post("/a/contact", async (request, reply) => {
 		if (!await api_key) return reply.status(500).send();
