@@ -1,7 +1,7 @@
 import type { FastifyInstance } from "fastify";
 import { resolve as path_resolve } from "path";
 
-const api_key = new Promise<string>(resolve => {
+const api_key = new Promise<string | undefined>(resolve => {
 	// [todo] refactor
 	if (process.env.NODE_ENV !== "production") {
 		void import("dotenv").then(dotenv => {
@@ -9,15 +9,17 @@ const api_key = new Promise<string>(resolve => {
 				path: path_resolve(process.cwd(), "../../.env")
 			});
 
-			resolve(process.env.EMAIL_API_KEY!);
+			resolve(process.env.EMAIL_API_KEY);
 		});
 	} else {
-		resolve(process.env.EMAIL_API_KEY!);
+		resolve(process.env.EMAIL_API_KEY);
 	}
 });
 
 function attachEmailHandler(server: FastifyInstance) {
 	server.post("/a/contact", async (request, reply) => {
+		if (!await api_key) return reply.status(500).send();
+
 		const api_request = await fetch("https://api.brevo.com/v3/smtp/email", {
 			body: JSON.stringify({
 				sender:{
