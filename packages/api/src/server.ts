@@ -1,6 +1,5 @@
 import {
-	fastify, type FastifyInstance,
-	type FastifyReply, type FastifyRequest
+	fastify, type FastifyReply, type FastifyRequest
 } from "fastify";
 
 import attachEmailHandler from "./email";
