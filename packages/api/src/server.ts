@@ -3,14 +3,9 @@ import {
 	type FastifyReply, type FastifyRequest
 } from "fastify";
 
+import attachEmailHandler from "./email";
 import fastifyStatic from "@fastify/static";
 import { join } from "path";
-
-function defineRoutes(server: FastifyInstance) {
-	server.post("/a/contact", (request, reply) => {
-		reply.send("Email functionality");
-	});
-}
 
 function webserver() {
 	const server = fastify({
@@ -24,7 +19,7 @@ function webserver() {
 		root: join(__dirname, "public")
 	});
 
-	defineRoutes(server);
+	attachEmailHandler(server);
 
 	return server;
 }
@@ -35,8 +30,6 @@ async function serverlessHandler(request: FastifyRequest, reply: FastifyReply) {
 	await server.ready();
 	server.server.emit("request", request, reply);
 }
-
-export default serverlessHandler;
 
 if (process.env.NODE_ENV !== "production") {
 	server.listen({
@@ -52,3 +45,5 @@ if (process.env.NODE_ENV !== "production") {
 		}
 	});
 }
+
+export default serverlessHandler;
