@@ -28,10 +28,10 @@ jobs:
         run: npm i vercel
 
       - name: Pull Vercel Environment
-        run: npx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Vercel Project
-        run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Start GitHub Deployment
         id: deployment
@@ -44,7 +44,7 @@ jobs:
       - name: Deploy
         id: vercel_deployment
         run: |
-          URL=$(npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} | tail -n1)
+          URL=$(npx vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} | tail -n1)
           echo "ENV_URL=$URL" >> $GITHUB_OUTPUT
 
       - name: Update GitHub Deployment Status
