@@ -1,6 +1,14 @@
 import type { FastifyInstance } from "fastify";
 import { resolve as path_resolve } from "path";
 
+function checkAPIKey(
+	key: string | undefined,
+	resolve: ((key: string | undefined) => void)
+) {
+	if (!key) console.warn("[email] API key not found in environment");
+	resolve(key);
+}
+
 const api_key = new Promise<string | undefined>(resolve => {
 	// [todo] refactor
 	if (process.env.NODE_ENV !== "production") {
@@ -9,16 +17,12 @@ const api_key = new Promise<string | undefined>(resolve => {
 				path: path_resolve(process.cwd(), "../../.env")
 			});
 
-			resolve(process.env.EMAIL_API_KEY);
+			checkAPIKey(process.env.EMAIL_API_KEY, resolve);
 		});
 	} else {
-		resolve(process.env.EMAIL_API_KEY);
+		checkAPIKey(process.env.EMAIL_API_KEY, resolve);
 	}
 });
-
-if (!await api_key) {
-	console.warn("[email] no API key found in environment");
-}
 
 function attachEmailHandler(server: FastifyInstance) {
 	server.post("/a/contact", async (request, reply) => {
