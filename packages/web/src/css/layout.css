@@ -18,6 +18,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+body *.hidden {
+	display: none;
+}
+
 .container {
 	width: 100%;
 	max-width: var(--max);

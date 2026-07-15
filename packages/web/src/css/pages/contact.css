@@ -33,3 +33,25 @@
 		resize: vertical;
 	}
 }
+
+#success-message,
+#failure-message {
+	border-radius: 9px;
+	margin-top: 2em;
+	padding: 0.4em 0.7em;
+	width: fit-content;
+}
+
+#success-message {
+	background-color: #acfdcb;
+
+	&::before {
+		content: "\2713";
+		font-family: Inter;
+		margin-right: 0.4em;
+	}
+}
+
+#failure-message {
+	background-color: #ffbeb7;
+}
