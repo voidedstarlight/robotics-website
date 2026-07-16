@@ -30,7 +30,7 @@ async function webserver() {
 
 const server = webserver();
 
-server.then(server => {
+void server.then(server => {
 	if (process.env.NODE_ENV !== "production") {
 		server.listen({
 			host: "0.0.0.0",

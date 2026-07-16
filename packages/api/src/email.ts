@@ -77,12 +77,12 @@ function attachEmailHandler(server: FastifyInstance) {
 			const api_request = await fetch("https://api.brevo.com/v3/smtp/email", {
 				body: JSON.stringify({
 					sender: {
-						name: "Grizzly Robotics",
-						email: "no-reply@grizzlyrobotics.org"
+						email: "no-reply@grizzlyrobotics.org",
+						name: "Grizzly Robotics"
 					},
 					to: [{
-						email: "test@voided.systems",
-						name: "Test Recipient"
+						email: "grizzlyrobotics2550@gmail.com",
+						name: "Grizzly Robotics"
 					}],
 					subject: `Message from ${sanitise(name)}`,
 					htmlContent: html
