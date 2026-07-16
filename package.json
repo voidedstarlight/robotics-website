@@ -22,7 +22,8 @@
 		"build:web": "npm run build -w @grizzlyrobotics.org/web",
 		"build": "npm run build:api && npm run build:web",
 		"dev": "concurrently -n 'API,WEB' -c 'bgBlue.black,bgMagentaBright.black' 'npm run dev -w @grizzlyrobotics.org/api' 'npm run dev -w @grizzlyrobotics.org/web'",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"start": "node dist/server.js"
 	},
 	"version": "0.0.1",
 	"workspaces": [
