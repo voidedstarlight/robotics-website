@@ -2,8 +2,9 @@ import {
 	fastify, type FastifyReply, type FastifyRequest
 } from "fastify";
 
-import fastifyRateLimit from "@fastify/rate-limit";
 import attachEmailHandler from "./email";
+import attachPageRoutes from "./pages";
+import fastifyRateLimit from "@fastify/rate-limit";
 import fastifyStatic from "@fastify/static";
 import { join } from "path";
 
@@ -16,7 +17,7 @@ async function webserver() {
 
 	server.register(fastifyStatic, {
 		prefix: "/",
-		root: join(__dirname, "public")
+		root: join(__dirname, "web/public")
 	});
 
 	await server.register(fastifyRateLimit, {
@@ -24,6 +25,7 @@ async function webserver() {
 	});
 
 	attachEmailHandler(server);
+	attachPageRoutes(server);
 
 	return server;
 }
