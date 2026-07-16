@@ -48,6 +48,12 @@ function attachEmailHandler(server: FastifyInstance) {
 	server.post(
 		"/a/contact",
 		{
+			config: {
+				rateLimit: {
+					max: 4,
+					timeWindow: "1 minute"
+				}
+			},
 			schema: {
 				body: {
 					properties: {
