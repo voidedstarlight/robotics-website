@@ -24,5 +24,8 @@ export default {
 	},
 	resolve: {
 		extensions: [".html", ".js", ".json", ".ts"]
+	},
+	watchOptions: {
+		poll: 1000
 	}
 }

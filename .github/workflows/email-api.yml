@@ -1,0 +1,14 @@
+name: Send Email through API
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "1 2 6 * *"
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request
+        run: |
+          curl -X POST -H "api-key: ${{ secrets.EMAIL_API_KEY }}" -H "content-type: application/json" -d '{"sender":{"name":"Grizzly Robotics","email":"contact@grizzlyrobotics.org"},"to":[{"email":"test@voided.systems","name":"Scheduled Send Recipient"}],"subject":"Scheduled Email Send","htmlContent":"This is a scheduled email sent each month to prevent API keys from being pruned."}' https://api.brevo.com/v3/smtp/email
