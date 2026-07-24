@@ -5,11 +5,21 @@ on:
     branches-ignore: [ deploy ]
 
 jobs:
-  preview:
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  check-token:
+    runs-on: ubuntu-latest
+    outputs:
+      token-exists: ${{ steps.check.outputs.exists }}
+    steps:
+      - name: Check if Vercel Token exists
+        id: check
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        if: "${{ env.VERCEL_TOKEN != '' }}"
+        run: echo "::set-output name=exists::true"
 
-    if: ${{ env.VERCEL_TOKEN != '' }}
+  preview:
+    if: needs.check-token.outputs.token-exists == 'true'
+    needs: [check-token]
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
