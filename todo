@@ -1,6 +1,6 @@
+room number change
 use absolute paths in hrefs
 fix stacked <link> in html heads
 cut .html in uris and og
 CSP hashes
 environment variables in docker
-remove summer camp links
