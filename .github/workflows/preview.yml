@@ -6,7 +6,7 @@ on:
 
 jobs:
   preview:
-    if: ${{ secrets.VERCEL_TOKEN != '' }}
+    if: env.VERCEL_TOKEN
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
