@@ -15,7 +15,7 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         if: "${{ env.VERCEL_TOKEN != '' }}"
-        run: echo "::set-output name=exists::true"
+        run: echo "exists=true" >> $GITHUB_OUTPUT
 
   preview:
     if: needs.check-token.outputs.token-exists == 'true'
