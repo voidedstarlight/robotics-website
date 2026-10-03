@@ -17,6 +17,9 @@
 	},
 	"main": "dist/server.js",
 	"name": "grizzlyrobotics.org",
+	"overrides": {
+		"content-disposition": "2.0.1"
+	},
 	"scripts": {
 		"build:api": "npm run build -w @grizzlyrobotics.org/api",
 		"build:web": "npm run build -w @grizzlyrobotics.org/web",
